@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/Space_Invaders.dir/main.c.o CMakeFiles/Space_Invaders.dir/print_frame.c.o CMakeFiles/Space_Invaders.dir/objects.c.o CMakeFiles/Space_Invaders.dir/ship.c.o -o Space_Invaders  -lcurses /usr/lib/x86_64-linux-gnu/libform.so

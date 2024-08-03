@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/mi_proyecto.dir/main.c.o CMakeFiles/mi_proyecto.dir/print_frame.c.o CMakeFiles/mi_proyecto.dir/objects.c.o CMakeFiles/mi_proyecto.dir/ship.c.o -o mi_proyecto  -lcurses /usr/lib/x86_64-linux-gnu/libform.so
