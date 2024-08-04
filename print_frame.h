@@ -1,11 +1,9 @@
-#include <curses.h>
-#include <ncurses.h>
-#include "objects.h"
-
 #ifndef PRINT_FRAME_H
 #define PRINT_FRAME_H
 
-
+#include <curses.h>
+#include <ncurses.h>
+#include "objects.h"
 
 typedef struct global_environement
 {

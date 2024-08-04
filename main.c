@@ -38,9 +38,6 @@ int main()
 
     while ((ch = getch()) != 'q')
     {
-        //ch = getch();
-       // if (ch == 27) break; //Codigo para ESC
-
 
         print_global_frame(ch, event, game);
 

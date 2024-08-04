@@ -4,6 +4,12 @@
 #include "ship.h"
 #include "objects.c"
 
+char* model[] = {
+    "  ^  ",
+    " /|\\ ",
+    "/_|_\\"
+                };
+
 Object* create_ship(void)
 {
     char* title = "Terminator";
@@ -13,16 +19,9 @@ Object* create_ship(void)
         printw("Error al asignar memoria");
     }
     strcpy(m_title,title);
-    char* design = "/\\";
-    char* m_design = malloc(strlen(design)+1);
-    if(m_design == NULL)
-    {
-        printw("Error al asignar memoria");
-    }
-    strcpy(m_design,design);
     Point start;
     start.x = COLS / 2;
     start.y = LINES/2;
-    Object* obj = make_obj(m_title, m_design, start, ship);
+    Object* obj = make_obj(m_title, model, start, ship,3);
     return obj;
 }
