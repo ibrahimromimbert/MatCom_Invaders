@@ -9,7 +9,7 @@
 #include "ship.c"
 #include "print_frame.c"
 
-#define DELAY 1000
+#define DELAY 10000
 
 int main()
 {
@@ -38,7 +38,6 @@ int main()
 
     while ((ch = getch()) != 'q')
     {
-
         print_global_frame(ch, event, game);
 
         refresh(); //Pintar en pantalla

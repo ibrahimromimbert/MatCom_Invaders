@@ -29,4 +29,5 @@ CMakeFiles/Space_Invaders.dir/print_frame.c.o: \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h /usr/include/unctrl.h \
  /usr/include/curses.h /mnt/o/Desktop/Space_Invaders/print_frame.h \
- /mnt/o/Desktop/Space_Invaders/objects.h
+ /mnt/o/Desktop/Space_Invaders/objects.h \
+ /mnt/o/Desktop/Space_Invaders/ship.h

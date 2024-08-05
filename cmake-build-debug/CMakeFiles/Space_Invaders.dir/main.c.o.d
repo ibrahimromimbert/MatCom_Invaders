@@ -63,4 +63,7 @@ CMakeFiles/Space_Invaders.dir/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h /mnt/o/Desktop/Space_Invaders/objects.h \
  /mnt/o/Desktop/Space_Invaders/ship.h \
- /mnt/o/Desktop/Space_Invaders/print_frame.h
+ /mnt/o/Desktop/Space_Invaders/print_frame.h \
+ /mnt/o/Desktop/Space_Invaders/ship.c \
+ /mnt/o/Desktop/Space_Invaders/objects.c \
+ /mnt/o/Desktop/Space_Invaders/print_frame.c
