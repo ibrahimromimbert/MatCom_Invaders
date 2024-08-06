@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/o/Desktop/Space_Invaders/linked_list.c">
+			<Option target="Space_Invaders"/>
+		</Unit>
+		<Unit filename="/mnt/o/Desktop/Space_Invaders/linked_list.h">
+			<Option target="Space_Invaders"/>
+		</Unit>
 		<Unit filename="/mnt/o/Desktop/Space_Invaders/main.c">
 			<Option target="Space_Invaders"/>
 		</Unit>

@@ -129,6 +129,30 @@ Space_Invaders/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/build
 .PHONY : Space_Invaders/fast
 
+linked_list.o: linked_list.c.o
+.PHONY : linked_list.o
+
+# target to build an object file
+linked_list.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/linked_list.c.o
+.PHONY : linked_list.c.o
+
+linked_list.i: linked_list.c.i
+.PHONY : linked_list.i
+
+# target to preprocess a source file
+linked_list.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/linked_list.c.i
+.PHONY : linked_list.c.i
+
+linked_list.s: linked_list.c.s
+.PHONY : linked_list.s
+
+# target to generate assembly for a file
+linked_list.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/linked_list.c.s
+.PHONY : linked_list.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -234,6 +258,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Space_Invaders"
+	@echo "... linked_list.o"
+	@echo "... linked_list.i"
+	@echo "... linked_list.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
