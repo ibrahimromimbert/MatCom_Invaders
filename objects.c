@@ -84,5 +84,5 @@ void free_obj(Object* obj)
 
     //free obj structure
     free(obj);
-    obj = NULL;
+    //obj = NULL;
 }

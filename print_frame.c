@@ -37,6 +37,7 @@ void move_bullet(void)
         if (bullet->position->y <= 1)
         {
             free_obj(bullet);
+            bullet = NULL;
         }
         else
         {
