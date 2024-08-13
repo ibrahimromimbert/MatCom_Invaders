@@ -8,9 +8,10 @@
 #include "objects.h"
 
 // Definición de la estructura del nodo de la lista enlazada
-typedef struct Node {
-    Object* obj;            // El objeto que almacenamos
-    struct Node* next;      // Puntero al siguiente nodo
+typedef struct Node
+{
+    Object* obj; // El objeto que almacenamos
+    struct Node* next; // Puntero al siguiente nodo
 } Node;
 
 Node* create_node(Object* obj);
