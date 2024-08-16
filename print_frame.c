@@ -32,17 +32,23 @@ void move_ship(int ch, MEVENT event, Object* ship)
 
 void move_bullet(void)
 {
-    if (bullet != NULL)
+    if (bullet_head != NULL)
     {
-        if (bullet->position->y <= 1)
+        Node* temp = bullet_head;
+        mov_dir mov = {.y_dir = -1};
+        while (temp != NULL)
         {
-            free_obj(bullet);
-            bullet = NULL;
-        }
-        else
-        {
-            mov_dir mov = {.y_dir = -1};
-            move_obj(bullet, mov);
+            if (temp->obj->position->y <= 1)
+            {
+                Node* temp_remove = temp;
+                temp = temp->next;
+                remove_node_bullet(temp_remove);
+            }
+            else
+            {
+                move_obj(temp->obj, mov);
+                temp = temp->next;
+            }
         }
     }
 }

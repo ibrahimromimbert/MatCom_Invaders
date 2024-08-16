@@ -48,6 +48,17 @@ void print_list(Node* head)
     }
 }
 
+void move_obj_from_list(Node* head, mov_dir dir)
+{
+    Node* temp = head;
+    while (temp != NULL)
+    {
+        //Moverlo
+        move_obj(temp->obj, dir);
+        temp = temp->next;
+    }
+}
+
 void free_node(Node* node)
 {
     free(node->obj->title);

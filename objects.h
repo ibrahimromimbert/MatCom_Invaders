@@ -30,5 +30,6 @@ typedef struct movement_direction
 Object* make_obj(char* title, char* design[], Point start, enum object_type, int model_size);
 void free_obj(Object* obj);
 void print_obj(Object* obj);
+void move_obj(Object* obj, mov_dir mov_dir);
 
 #endif //OBJECTS_H

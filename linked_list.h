@@ -20,5 +20,6 @@ void print_list(Node* head);
 void free_node(Node* node);
 void free_list(Node* head);
 void remove_node(Node* head, Node* node);
+void move_obj_from_list(Node* head, mov_dir dir);
 
 #endif //LINKED_LIST_H

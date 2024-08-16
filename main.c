@@ -9,6 +9,7 @@
 #include "linked_list.h"
 #include "ship.c"
 #include "print_frame.c"
+#include "linked_list.c"
 
 #define DELAY 10000
 

@@ -53,6 +53,17 @@ void print_list(Node* head)
     }
 }
 
+void move_obj_from_list(Node* head, mov_dir dir)
+{
+    Node* temp = head;
+    while (temp != NULL)
+    {
+        //Moverlo
+        move_obj(temp->obj, dir);
+        temp = temp->next;
+    }
+}
+
 void free_node(Node* node)
 {
     free(node->obj->title);
@@ -101,6 +112,229 @@ void remove_node(Node* head, Node* node)
         }
     }
 }
+
+</file>
+
+
+
+<file file_path=/ship.c>
+#include <curses.h>
+#include <ncurses.h>
+#include <stdlib.h>
+#include "ship.h"
+#include "objects.c"
+
+char* model[] = {
+    "   ^  ",
+    "  /|\\ ",
+    "</_|_\\>"
+};
+
+Object* create_ship(void) //it creates the player's ship
+{
+    char* title = "Terminator";
+    Point start;
+    start.x = COLS / 2;
+    start.y = LINES - 5;
+    Object* obj = make_obj(title, model, start, ship, 3);
+    return obj;
+}
+
+Object* create_bullet(Point* ship_position) //assignes to the bullet variable a new bullet object
+{
+    char* bullet_1 = "bullet_1";
+    char* design[] = {"|"};
+    Point start = {.x = ship_position->x, .y = ship_position->y};
+    Object* bullet = make_obj(bullet_1, design, start, s_bullet, 1);
+    return bullet;
+}
+
+void shot(int ch, MEVENT event, Object* ship)
+{
+    // if (ch == KEY_MOUSE)
+    // {
+    //     if (getmouse(&event) == OK)
+    //     {
+    //         if (event.bstate & BUTTON1_PRESSED)
+    //         {
+                Object* bullet = create_bullet(ship->position);
+                append_node(bullet_head, bullet);
+    //         }
+    //     }
+    // }
+}
+
+void print_shot(void)
+{
+    if (bullet_head != NULL)
+    {
+        print_list(bullet_head);
+    }
+}
+
+</file>
+
+
+
+<file file_path=/ship.h>
+#ifndef SHIP_H
+#define SHIP_H
+
+#include <ncurses.h>
+#include "objects.h"
+#include "linked_list.h"
+
+
+Node* bullet_head;
+Object* bullet;
+
+Object* create_ship(void);
+void shot(int ch, MEVENT event, Object* ship);
+void print_shot(void);
+
+#endif //SHIP_H
+
+</file>
+
+
+
+<file file_path=/linked_list.h>
+//
+// Created by 18137 on 06/08/2024.
+//
+
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
+
+#include "objects.h"
+
+// Definición de la estructura del nodo de la lista enlazada
+typedef struct Node
+{
+    Object* obj; // El objeto que almacenamos
+    struct Node* next; // Puntero al siguiente nodo
+} Node;
+
+Node* create_node(Object* obj);
+void append_node(Node* head, Object* obj);
+void print_list(Node* head);
+void free_node(Node* node);
+void free_list(Node* head);
+void remove_node(Node* head, Node* node);
+void move_obj_from_list(Node* head, mov_dir dir);
+
+#endif //LINKED_LIST_H
+
+</file>
+
+
+
+<file file_path=/print_frame.c>
+#include <curses.h>
+#include <ncurses.h>
+#include "print_frame.h"
+#include "objects.h"
+#include "ship.h"
+
+void move_ship(int ch, MEVENT event, Object* ship)
+{
+    Point* position = ship->position;
+    mov_dir direction = {.x_dir = 0, .y_dir = 0};
+    switch (ch)
+    {
+    case KEY_MOUSE:
+        if (getmouse(&event) == OK)
+        {
+            if (event.x > position->x) direction.x_dir = 1;
+            else if (event.x < position->x) direction.x_dir = -1;
+
+            if (event.y > position->y) direction.y_dir = 1;
+            else if (event.y < position->y) direction.y_dir = -1;
+
+            //mvprintw(1, 0, "Mouse position: (%d, %d)", event.x, event.y);
+            //clrtoeol();
+            // refresh();
+        }
+        break;
+    default:
+        break;
+    }
+    move_obj(ship, direction);
+}
+
+void move_bullet(void)
+{
+    if (bullet_head != NULL)
+    {
+        Node* temp = bullet_head;
+        mov_dir mov = {.y_dir = -1};
+        while (temp != NULL)
+        {
+            if (temp->obj->position->y <= 1)
+            {
+                Node* temp_remove = temp;
+                temp = temp->next;
+                remove_node(bullet_head, temp_remove);
+            }
+            else
+            {
+                move_obj(temp->obj, mov);
+                temp = temp->next;
+            }
+        }
+    }
+}
+
+void print_global_frame(int ch, MEVENT event, global_environement* game)
+{
+    clear();
+    move_ship(ch, event, game->ship);
+    move_bullet();
+    shot(ch, event, game->ship);
+    print_obj(game->ship);
+    print_shot();
+}
+
+</file>
+
+
+
+<file file_path=/objects.h>
+#ifndef OBJECTS_H
+#define OBJECTS_H
+
+
+typedef struct Point
+{
+    /* A point structure for saving the characters and cordinate of an object*/
+    int x, y;
+} Point;
+
+enum object_type { ship, s_bullet, enemie, e_bullet };
+
+typedef struct Object
+{
+    Point* position; //Position point
+    char* title; //name of obj
+    char** design; //string that represents de obj
+    enum object_type type; //the type of the objec, ship, enemy, bullet...etc
+    int life; // when it reaches 0 the obj is dead
+    void* parent_list;
+    int model_size;
+} Object;
+
+typedef struct movement_direction
+{
+    int x_dir;
+    int y_dir;
+} mov_dir;
+
+Object* make_obj(char* title, char* design[], Point start, enum object_type, int model_size);
+void free_obj(Object* obj);
+void print_obj(Object* obj);
+void move_obj(Object* obj, mov_dir mov_dir);
+
+#endif //OBJECTS_H
 
 </file>
 
