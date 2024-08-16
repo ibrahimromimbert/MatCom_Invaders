@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Space_Invaders.dir/enemies.c.o"
+  "CMakeFiles/Space_Invaders.dir/enemies.c.o.d"
   "CMakeFiles/Space_Invaders.dir/linked_list.c.o"
   "CMakeFiles/Space_Invaders.dir/linked_list.c.o.d"
   "CMakeFiles/Space_Invaders.dir/main.c.o"
   "CMakeFiles/Space_Invaders.dir/main.c.o.d"
+  "CMakeFiles/Space_Invaders.dir/menu.c.o"
+  "CMakeFiles/Space_Invaders.dir/menu.c.o.d"
   "CMakeFiles/Space_Invaders.dir/objects.c.o"
   "CMakeFiles/Space_Invaders.dir/objects.c.o.d"
   "CMakeFiles/Space_Invaders.dir/print_frame.c.o"

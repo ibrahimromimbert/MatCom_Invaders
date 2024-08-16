@@ -17,7 +17,13 @@ add_executable(Space_Invaders main.c
         ship.c
         linked_list.c
         linked_list.h
-        linked_list.h)
+        linked_list.h
+        enemies.c
+        enemies.h
+        enemies.h
+        menu.c
+        menu.h
+        menu.h)
 
 # Enlazar el ejecutable con la biblioteca ncurses
 target_link_libraries(Space_Invaders ${CURSES_LIBRARIES})

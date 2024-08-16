@@ -129,6 +129,30 @@ Space_Invaders/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/build
 .PHONY : Space_Invaders/fast
 
+enemies.o: enemies.c.o
+.PHONY : enemies.o
+
+# target to build an object file
+enemies.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/enemies.c.o
+.PHONY : enemies.c.o
+
+enemies.i: enemies.c.i
+.PHONY : enemies.i
+
+# target to preprocess a source file
+enemies.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/enemies.c.i
+.PHONY : enemies.c.i
+
+enemies.s: enemies.c.s
+.PHONY : enemies.s
+
+# target to generate assembly for a file
+enemies.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/enemies.c.s
+.PHONY : enemies.c.s
+
 linked_list.o: linked_list.c.o
 .PHONY : linked_list.o
 
@@ -176,6 +200,30 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/main.c.s
 .PHONY : main.c.s
+
+menu.o: menu.c.o
+.PHONY : menu.o
+
+# target to build an object file
+menu.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/menu.c.o
+.PHONY : menu.c.o
+
+menu.i: menu.c.i
+.PHONY : menu.i
+
+# target to preprocess a source file
+menu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/menu.c.i
+.PHONY : menu.c.i
+
+menu.s: menu.c.s
+.PHONY : menu.s
+
+# target to generate assembly for a file
+menu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/menu.c.s
+.PHONY : menu.c.s
 
 objects.o: objects.c.o
 .PHONY : objects.o
@@ -258,12 +306,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Space_Invaders"
+	@echo "... enemies.o"
+	@echo "... enemies.i"
+	@echo "... enemies.s"
 	@echo "... linked_list.o"
 	@echo "... linked_list.i"
 	@echo "... linked_list.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... menu.o"
+	@echo "... menu.i"
+	@echo "... menu.s"
 	@echo "... objects.o"
 	@echo "... objects.i"
 	@echo "... objects.s"

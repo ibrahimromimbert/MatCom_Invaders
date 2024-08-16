@@ -7,7 +7,7 @@
 
 
 Node* bullet_head;
-Object* bullet;
+Object* bullet;  //quitar
 
 Object* create_ship(void);
 void shot(int ch, MEVENT event, Object* ship);
