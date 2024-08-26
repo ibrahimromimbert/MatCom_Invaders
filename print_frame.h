@@ -5,6 +5,17 @@
 #include <ncurses.h>
 #include "objects.h"
 
+typedef struct Area_Limits
+{
+    int UP_lim;
+    int Down_lim;
+    int Left_lim;
+    int Right_lim;
+} Valid_Area;
+
+Valid_Area Ship_Area;
+Valid_Area Enemies_Area;
+
 typedef struct global_environement
 {
     Object* ship;

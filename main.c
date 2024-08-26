@@ -22,6 +22,7 @@ int main()
 
     // Inicializa ncurses
     initscr();
+    start_color();
     raw();
     nodelay(stdscr, TRUE);
     noecho();
@@ -29,6 +30,8 @@ int main()
     mousemask(ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL); //Entrada por mouse
     curs_set(FALSE);
 
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+    init_pair(2,COLOR_GREEN, COLOR_BLACK);
 
     while (true)
     {
@@ -45,6 +48,19 @@ int main()
         Object* ship = create_ship(); //La nave del jugador
         global_environement* game = malloc(sizeof(global_environement));
         game->ship = ship;
+        
+        //////////Inicializar Areas de juego///////////////
+        Enemies_Area.UP_lim = 0;
+        Enemies_Area.Down_lim =LINES/2 ;
+        Enemies_Area.Left_lim = 0;
+        Enemies_Area.Right_lim = COLS-5;
+
+        Ship_Area.UP_lim = LINES/2 ;
+        Ship_Area.Down_lim = LINES;
+        Ship_Area.Left_lim =0 ;
+        Ship_Area.Right_lim = COLS-3;
+        /////////////Fin de Area///////////
+
 
         ///Fin de las inicializaciones///
 
