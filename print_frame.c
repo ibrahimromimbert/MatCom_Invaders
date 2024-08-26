@@ -1,6 +1,8 @@
 #include <curses.h>
 #include <ncurses.h>
 #include "print_frame.h"
+
+#include "enemies.h"
 #include "objects.h"
 #include "ship.h"
 
@@ -58,7 +60,10 @@ void print_global_frame(int ch, MEVENT event, global_environement* game)
     clear();
     move_ship(ch, event, game->ship);
     move_bullet();
+    enemies_deployment();
+    move_enemies();
     shot(ch, event, game->ship);
     print_obj(game->ship);
+    print_enemies();
     print_shot();
 }

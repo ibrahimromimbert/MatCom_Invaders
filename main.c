@@ -12,6 +12,8 @@
 #include "print_frame.c"
 #include "linked_list.c"
 #include "menu.c"
+#include "enemies.h"
+#include "enemies.c"
 
 #define DELAY 10000
 
@@ -48,7 +50,9 @@ int main()
         Object* ship = create_ship(); //La nave del jugador
         global_environement* game = malloc(sizeof(global_environement));
         game->ship = ship;
-        
+        MAX_ENEMIES_COUNT = 20;
+        // enemies_deployment();
+        // print_enemies();
         //////////Inicializar Areas de juego///////////////
         Enemies_Area.UP_lim = 0;
         Enemies_Area.Down_lim =LINES/2 ;

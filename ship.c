@@ -24,7 +24,7 @@ Object* create_bullet(Point* ship_position) //assignes to the bullet variable a 
 {
     char* bullet_1 = "bullet_1";
     char* design[] = {"|"};
-    Point start = {.x = ship_position->x, .y = ship_position->y};
+    Point start = {.x = ship_position->x+3, .y = ship_position->y};
     Object* bullet = make_obj(bullet_1, design, start, s_bullet, 1);
     return bullet;
 }

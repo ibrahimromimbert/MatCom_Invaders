@@ -8,6 +8,9 @@
 #include "linked_list.h"
 
 Node* enemies_head;
-
+int MAX_ENEMIES_COUNT;
+void enemies_deployment(void);
+void print_enemies(void);
+void move_enemies(void);
 
 #endif //ENEMIES_H

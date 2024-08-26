@@ -10,6 +10,12 @@ typedef struct Point
 
 enum object_type { ship, s_bullet, enemie, e_bullet };
 
+typedef struct movement_direction
+{
+    int x_dir;
+    int y_dir;
+} mov_dir;
+
 typedef struct Object
 {
     Point* position; //Position point
@@ -19,13 +25,10 @@ typedef struct Object
     int life; // when it reaches 0 the obj is dead
     void* parent_list;
     int model_size;
+    mov_dir last_dir;
 } Object;
 
-typedef struct movement_direction
-{
-    int x_dir;
-    int y_dir;
-} mov_dir;
+
 
 Object* make_obj(char* title, char* design[], Point start, enum object_type, int model_size);
 void free_obj(Object* obj);
