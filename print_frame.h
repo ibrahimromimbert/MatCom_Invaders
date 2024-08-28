@@ -19,8 +19,9 @@ Valid_Area Enemies_Area;
 typedef struct global_environement
 {
     Object* ship;
-    Object** enemies;
-    Object* gaming_interface;
+   // Object** enemies;
+   // Object* gaming_interface;
+
 } global_environement;
 
 void print_global_frame(int ch, MEVENT event, global_environement* game);

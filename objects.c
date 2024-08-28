@@ -101,7 +101,9 @@ void print_obj(Object* obj)
             move(y+i, obj->position->x+j);
             if (design[i][j] != ' ')
             {
-                printw("%c", design[i][j]);
+                //mvaddch(y+i,obj->position->x+j,design[i][j]);
+                //printw("%c", design[i][j]);
+                addch(design[i][j]);
             }
         }
     }
