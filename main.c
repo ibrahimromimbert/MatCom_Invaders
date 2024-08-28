@@ -15,7 +15,7 @@
 #include "enemies.h"
 #include "enemies.c"
 
-#define DELAY 10000
+#define DELAY 5000
 
 int main()
 {

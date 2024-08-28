@@ -23,9 +23,11 @@ typedef struct Object
     char** design; //string that represents de obj
     enum object_type type; //the type of the objec, ship, enemy, bullet...etc
     int life; // when it reaches 0 the obj is dead
-    void* parent_list;
+   // void* parent_list;
     int model_size;
     mov_dir last_dir;
+    Point* colition_points;
+    int col_points_amount;
 } Object;
 
 

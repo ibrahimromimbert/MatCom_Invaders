@@ -129,28 +129,28 @@ void move_enemies(void)
                 remove_node_enemie(temp_remove);
             }
 
-            else if (temp->obj->position->x >= COLS && temp->obj->last_dir.x_dir == 1)
+            else if (temp->obj->position->x >= COLS-10 && temp->obj->last_dir.x_dir == 1)
             {
                 temp->obj->last_dir.x_dir = 0;
                 temp->obj->last_dir.y_dir = 1;
                 mov.y_dir = 1;
                 mov.x_dir = 0;
             }
-            else if (temp->obj->position->x == 0 && temp->obj->last_dir.x_dir == -1)
+            else if (temp->obj->position->x <= 0 && temp->obj->last_dir.x_dir == -1)
             {
                 temp->obj->last_dir.x_dir = 0;
                 temp->obj->last_dir.y_dir = 1;
                 mov.y_dir = 1;
                 mov.x_dir = 0;
             }
-            else if (temp->obj->position->x == 0 && temp->obj->last_dir.y_dir == 1)
+            else if (temp->obj->position->x <= 0 && temp->obj->last_dir.y_dir == 1)
             {
                 temp->obj->last_dir.x_dir = 1;
                 temp->obj->last_dir.y_dir = 0;
                 mov.x_dir = 1;
                 mov.y_dir = 0;
             }
-            else if (temp->obj->position->x >= COLS && temp->obj->last_dir.y_dir == 1)
+            else if (temp->obj->position->x >= COLS-10 && temp->obj->last_dir.y_dir == 1)
             {
                 temp->obj->last_dir.x_dir = -1;
                 temp->obj->last_dir.y_dir = 0;
