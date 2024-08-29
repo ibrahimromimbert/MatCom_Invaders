@@ -66,4 +66,5 @@ void print_global_frame(int ch, MEVENT event, global_environement* game)
     print_obj(game->ship);
     print_enemies();
     print_shot();
+    validate_colition();
 }

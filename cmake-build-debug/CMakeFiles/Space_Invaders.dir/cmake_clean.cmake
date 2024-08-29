@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Space_Invaders.dir/bullets_p_c.c.o"
+  "CMakeFiles/Space_Invaders.dir/bullets_p_c.c.o.d"
   "CMakeFiles/Space_Invaders.dir/enemies.c.o"
   "CMakeFiles/Space_Invaders.dir/enemies.c.o.d"
   "CMakeFiles/Space_Invaders.dir/linked_list.c.o"

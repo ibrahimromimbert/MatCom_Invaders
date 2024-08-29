@@ -129,6 +129,30 @@ Space_Invaders/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/build
 .PHONY : Space_Invaders/fast
 
+bullets_p_c.o: bullets_p_c.c.o
+.PHONY : bullets_p_c.o
+
+# target to build an object file
+bullets_p_c.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/bullets_p_c.c.o
+.PHONY : bullets_p_c.c.o
+
+bullets_p_c.i: bullets_p_c.c.i
+.PHONY : bullets_p_c.i
+
+# target to preprocess a source file
+bullets_p_c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/bullets_p_c.c.i
+.PHONY : bullets_p_c.c.i
+
+bullets_p_c.s: bullets_p_c.c.s
+.PHONY : bullets_p_c.s
+
+# target to generate assembly for a file
+bullets_p_c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/bullets_p_c.c.s
+.PHONY : bullets_p_c.c.s
+
 enemies.o: enemies.c.o
 .PHONY : enemies.o
 
@@ -306,6 +330,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Space_Invaders"
+	@echo "... bullets_p_c.o"
+	@echo "... bullets_p_c.i"
+	@echo "... bullets_p_c.s"
 	@echo "... enemies.o"
 	@echo "... enemies.i"
 	@echo "... enemies.s"

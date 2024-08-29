@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "ship.h"
 #include "objects.c"
+#include "bullets_p_c.h"
 
 char* model[] = {
     "   ^  ",
@@ -53,8 +54,7 @@ void shot(int ch, MEVENT event, Object* ship)
         {
             if (event.bstate & BUTTON1_PRESSED)
             {
-                Object* bullet = create_bullet(ship->position);
-                append_node_bullet(bullet);
+                consumidor(ship);
             }
         }
     }

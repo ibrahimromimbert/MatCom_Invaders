@@ -7,6 +7,7 @@
 #include "linked_list.h"
 #include "objects.h"
 #include "curses.h"
+#include "ship.h"
 
 char* e1_title = "nibbler";
 char* e1_model[] = {
@@ -129,7 +130,7 @@ void move_enemies(void)
                 remove_node_enemie(temp_remove);
             }
 
-            else if (temp->obj->position->x >= COLS-10 && temp->obj->last_dir.x_dir == 1)
+            else if (temp->obj->position->x >= COLS - 10 && temp->obj->last_dir.x_dir == 1)
             {
                 temp->obj->last_dir.x_dir = 0;
                 temp->obj->last_dir.y_dir = 1;
@@ -150,7 +151,7 @@ void move_enemies(void)
                 mov.x_dir = 1;
                 mov.y_dir = 0;
             }
-            else if (temp->obj->position->x >= COLS-10 && temp->obj->last_dir.y_dir == 1)
+            else if (temp->obj->position->x >= COLS - 10 && temp->obj->last_dir.y_dir == 1)
             {
                 temp->obj->last_dir.x_dir = -1;
                 temp->obj->last_dir.y_dir = 0;
@@ -160,6 +161,47 @@ void move_enemies(void)
 
             move_obj(temp->obj, mov);
             temp = temp->next;
+        }
+    }
+}
+
+void validate_colition(void)
+{
+    Node* current_enemie = enemies_head;
+    while (current_enemie != NULL)
+    {
+        int muerte = 0;
+        Node* current_bullet = bullet_head;
+
+        while (current_bullet != NULL)
+        {
+            for (int i = 0; i < current_enemie->obj->col_points_amount; i++)
+            {
+                if (current_enemie->obj->colition_points[i].x == current_bullet->obj->position->x &&
+                    current_enemie->obj->colition_points[i].y == current_bullet->obj->position->y)
+                {
+                    Node* temp_remove_bullet = current_bullet;
+                    current_bullet = current_bullet->next;
+                    remove_node_bullet(temp_remove_bullet);
+
+                    Node* temp_remove_enemie = current_enemie;
+                    current_enemie = current_enemie->next;
+                    remove_node_enemie(temp_remove_enemie);
+                    muerte = 1;
+                    break;
+
+                    //remove_node_bullet(current_bullet);
+                    //remove_node_enemie(current_enemie);
+                }
+            }
+            if (muerte == 0)
+            {
+                current_bullet = current_bullet->next;
+            }
+        }
+        if (muerte == 0)
+        {
+            current_enemie = current_enemie->next;
         }
     }
 }

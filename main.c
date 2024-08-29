@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <pthread.h>
 #include "objects.h"
 #include "ship.h"
 #include "print_frame.h"
@@ -14,6 +15,8 @@
 #include "menu.c"
 #include "enemies.h"
 #include "enemies.c"
+#include "bullets_p_c.h"
+#include "bullets_p_c.c"
 
 #define DELAY 5000
 
@@ -51,8 +54,10 @@ int main()
         global_environement* game = malloc(sizeof(global_environement));
         game->ship = ship;
         MAX_ENEMIES_COUNT = 20;
-        // enemies_deployment();
-        // print_enemies();
+        pthread_t hilo_productor;
+        sem_init(&sem, 0, 1);
+        pthread_create(&hilo_productor, NULL, productor, NULL);
+
         //////////Inicializar Areas de juego///////////////
         Enemies_Area.UP_lim = 0;
         Enemies_Area.Down_lim =LINES/2 ;
@@ -82,6 +87,8 @@ int main()
         ///
         ///FALTA LIBERAR LA MEMORIA DESPUES DEL JUEGO;
         ///
+        pthread_join(hilo_productor, NULL);
+        sem_destroy(&sem); // Destruye el semáforo
         printf("\033[?1003h\n"); // Habilitar reporte de posición del mouse
         ///////////////////Cerrar Area del juego///////////////////////////////////////
     }

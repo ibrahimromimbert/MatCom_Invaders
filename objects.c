@@ -98,12 +98,12 @@ void print_obj(Object* obj)
         int len = strlen(design[i]);
         for (int j = 0; j < len; ++j)
         {
-            move(y+i, obj->position->x+j);
+           // move(y+i, obj->position->x+j);
             if (design[i][j] != ' ')
             {
-                //mvaddch(y+i,obj->position->x+j,design[i][j]);
+                mvaddch(y+i,obj->position->x+j,design[i][j]);
                 //printw("%c", design[i][j]);
-                addch(design[i][j]);
+                //addch(design[i][j]);
             }
         }
     }
