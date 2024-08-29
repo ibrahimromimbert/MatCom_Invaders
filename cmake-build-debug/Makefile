@@ -297,6 +297,30 @@ print_frame.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/print_frame.c.s
 .PHONY : print_frame.c.s
 
+save_local.o: save_local.c.o
+.PHONY : save_local.o
+
+# target to build an object file
+save_local.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/save_local.c.o
+.PHONY : save_local.c.o
+
+save_local.i: save_local.c.i
+.PHONY : save_local.i
+
+# target to preprocess a source file
+save_local.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/save_local.c.i
+.PHONY : save_local.c.i
+
+save_local.s: save_local.c.s
+.PHONY : save_local.s
+
+# target to generate assembly for a file
+save_local.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Invaders.dir/build.make CMakeFiles/Space_Invaders.dir/save_local.c.s
+.PHONY : save_local.c.s
+
 ship.o: ship.c.o
 .PHONY : ship.o
 
@@ -351,6 +375,9 @@ help:
 	@echo "... print_frame.o"
 	@echo "... print_frame.i"
 	@echo "... print_frame.s"
+	@echo "... save_local.o"
+	@echo "... save_local.i"
+	@echo "... save_local.s"
 	@echo "... ship.o"
 	@echo "... ship.i"
 	@echo "... ship.s"

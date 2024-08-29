@@ -121,6 +121,12 @@
 		<Unit filename="/mnt/o/Desktop/Space_Invaders/print_frame.h">
 			<Option target="Space_Invaders"/>
 		</Unit>
+		<Unit filename="/mnt/o/Desktop/Space_Invaders/save_local.c">
+			<Option target="Space_Invaders"/>
+		</Unit>
+		<Unit filename="/mnt/o/Desktop/Space_Invaders/save_local.h">
+			<Option target="Space_Invaders"/>
+		</Unit>
 		<Unit filename="/mnt/o/Desktop/Space_Invaders/ship.c">
 			<Option target="Space_Invaders"/>
 		</Unit>

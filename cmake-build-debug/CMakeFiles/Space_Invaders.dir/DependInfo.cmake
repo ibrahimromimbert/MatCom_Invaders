@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/o/Desktop/Space_Invaders/menu.c" "CMakeFiles/Space_Invaders.dir/menu.c.o" "gcc" "CMakeFiles/Space_Invaders.dir/menu.c.o.d"
   "/mnt/o/Desktop/Space_Invaders/objects.c" "CMakeFiles/Space_Invaders.dir/objects.c.o" "gcc" "CMakeFiles/Space_Invaders.dir/objects.c.o.d"
   "/mnt/o/Desktop/Space_Invaders/print_frame.c" "CMakeFiles/Space_Invaders.dir/print_frame.c.o" "gcc" "CMakeFiles/Space_Invaders.dir/print_frame.c.o.d"
+  "/mnt/o/Desktop/Space_Invaders/save_local.c" "CMakeFiles/Space_Invaders.dir/save_local.c.o" "gcc" "CMakeFiles/Space_Invaders.dir/save_local.c.o.d"
   "/mnt/o/Desktop/Space_Invaders/ship.c" "CMakeFiles/Space_Invaders.dir/ship.c.o" "gcc" "CMakeFiles/Space_Invaders.dir/ship.c.o.d"
   )
 

@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Space_Invaders.dir/objects.c.o.d"
   "CMakeFiles/Space_Invaders.dir/print_frame.c.o"
   "CMakeFiles/Space_Invaders.dir/print_frame.c.o.d"
+  "CMakeFiles/Space_Invaders.dir/save_local.c.o"
+  "CMakeFiles/Space_Invaders.dir/save_local.c.o.d"
   "CMakeFiles/Space_Invaders.dir/ship.c.o"
   "CMakeFiles/Space_Invaders.dir/ship.c.o.d"
   "Space_Invaders"
